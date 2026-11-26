@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DocumentChecklistRouteImport } from './routes/document-checklist'
+import { Route as EmployerHubRouteImport } from './routes/employer-hub'
+import { Route as FinancialAccessRouteImport } from './routes/financial-access'
+import { Route as LegalGuidanceRouteImport } from './routes/legal-guidance'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as ApiLegalChatRouteImport } from './routes/api.legal-chat'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentChecklistRoute = DocumentChecklistRouteImport.update({
+  id: '/document-checklist',
+  path: '/document-checklist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmployerHubRoute = EmployerHubRouteImport.update({
+  id: '/employer-hub',
+  path: '/employer-hub',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancialAccessRoute = FinancialAccessRouteImport.update({
+  id: '/financial-access',
+  path: '/financial-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalGuidanceRoute = LegalGuidanceRouteImport.update({
+  id: '/legal-guidance',
+  path: '/legal-guidance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiLegalChatRoute = ApiLegalChatRouteImport.update({
+  id: '/api/legal-chat',
+  path: '/api/legal-chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/document-checklist': typeof DocumentChecklistRoute
+  '/employer-hub': typeof EmployerHubRoute
+  '/financial-access': typeof FinancialAccessRoute
+  '/legal-guidance': typeof LegalGuidanceRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/api/legal-chat': typeof ApiLegalChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/document-checklist': typeof DocumentChecklistRoute
+  '/employer-hub': typeof EmployerHubRoute
+  '/financial-access': typeof FinancialAccessRoute
+  '/legal-guidance': typeof LegalGuidanceRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/api/legal-chat': typeof ApiLegalChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/document-checklist': typeof DocumentChecklistRoute
+  '/employer-hub': typeof EmployerHubRoute
+  '/financial-access': typeof FinancialAccessRoute
+  '/legal-guidance': typeof LegalGuidanceRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/api/legal-chat': typeof ApiLegalChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/dashboard'
+    | '/document-checklist'
+    | '/employer-hub'
+    | '/financial-access'
+    | '/legal-guidance'
+    | '/reset-password'
+    | '/api/legal-chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/dashboard'
+    | '/document-checklist'
+    | '/employer-hub'
+    | '/financial-access'
+    | '/legal-guidance'
+    | '/reset-password'
+    | '/api/legal-chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/auth'
+    | '/dashboard'
+    | '/document-checklist'
+    | '/employer-hub'
+    | '/financial-access'
+    | '/legal-guidance'
+    | '/reset-password'
+    | '/api/legal-chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
+  DashboardRoute: typeof DashboardRoute
+  DocumentChecklistRoute: typeof DocumentChecklistRoute
+  EmployerHubRoute: typeof EmployerHubRoute
+  FinancialAccessRoute: typeof FinancialAccessRoute
+  LegalGuidanceRoute: typeof LegalGuidanceRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  ApiLegalChatRoute: typeof ApiLegalChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/document-checklist': {
+      id: '/document-checklist'
+      path: '/document-checklist'
+      fullPath: '/document-checklist'
+      preLoaderRoute: typeof DocumentChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/employer-hub': {
+      id: '/employer-hub'
+      path: '/employer-hub'
+      fullPath: '/employer-hub'
+      preLoaderRoute: typeof EmployerHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financial-access': {
+      id: '/financial-access'
+      path: '/financial-access'
+      fullPath: '/financial-access'
+      preLoaderRoute: typeof FinancialAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal-guidance': {
+      id: '/legal-guidance'
+      path: '/legal-guidance'
+      fullPath: '/legal-guidance'
+      preLoaderRoute: typeof LegalGuidanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/legal-chat': {
+      id: '/api/legal-chat'
+      path: '/api/legal-chat'
+      fullPath: '/api/legal-chat'
+      preLoaderRoute: typeof ApiLegalChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
+  DashboardRoute: DashboardRoute,
+  DocumentChecklistRoute: DocumentChecklistRoute,
+  EmployerHubRoute: EmployerHubRoute,
+  FinancialAccessRoute: FinancialAccessRoute,
+  LegalGuidanceRoute: LegalGuidanceRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  ApiLegalChatRoute: ApiLegalChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
